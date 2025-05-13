@@ -1,12 +1,23 @@
 public class Student {
     private String id;
-    private String name;
-    private String course;
+    private String grade;
+    private int jersey ;
+    private String position;
+    private String cheer;
+    Private String subject;
+    Private boolean IsJerseyColor;
+    Private boolean pitchCatch;
 
-    public Student(String id, String name, String course) {
+
+    public Student(String id, String grade, int jersey, String position, String cheer, String subject, boolean jerseyColor, boolean pitchCatch) {
         this.id = id;
-        this.name = name;
-        this.course = course;
+        this.grade = grade;
+        this.jersey = jersey;
+        this.position = position;
+        this.cheer = cheer;
+        this.subject = subject;
+        this.jerseyColor= jerseyColor;
+        this.pitchCatch = pitchCatch;
     }
 
     // Getters and setters
@@ -18,28 +29,54 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getGrade() {
+        return grade;
     }
+    public void setGrade(String grade) { this.grade = grade; }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getJersey() {
+        return jersey;
     }
+    public void setJersey(int jersey) { this.jersey = jersey; }
 
-    public String getCourse() {
-        return course;
+    public String getPosition() {
+        return position;
     }
+    public void setPosition(String position) { this.position = position; }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public String getCheer() {
+        return cheer;
     }
+    public void setCheer(String cheer) { this.cheer = cheer; }
+
+    public String getSubject() {
+        return subject;
+    }
+    public void setSubject(String subject) { this.subject= subject}
+
+    public boolean isJerseyColor() {
+        return isJerseyColor;
+    }
+    public void setJerseyColor(boolean jerseyColor) { this.isJerseyColor= IsJerseyColor}
+
+    public boolean isPitchCatch() {
+        return pitchCatch;
+    }
+    public void setPitchCatch(boolean pitchCatch) { this.pitchCatch = pitchCatch; }
+
+
 
     @Override
     public String toString() {
         return "Student{" +
                 "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", course='" + course + '\'' +
+                ", grade='" + grade + '\'' +
+                ", jersey=" + jersey +
+                ", position='" + position + '\'' +
+                ", cheer='" + cheer + '\'' +
+                ", subject='" + subject + '\'' +
+                ", jerseyColor=" + jerseyColor +
+                ", pitchCatch=" + pitchCatch +
                 '}';
     }
 }
