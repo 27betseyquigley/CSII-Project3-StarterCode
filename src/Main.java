@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    public static  List<Student> studentList= new ArrayList<Student>();
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ;
         // TO DO: Create a Student List object that stores preloaded student objects
         // Student objects should be each student with info you collected
 
@@ -47,18 +50,40 @@ public class Main {
 
         // TO DO: create a student object with this information
         StudentList.createStudent(student);
-        System.out.println("Student created successfully!");
+        System.out.println("Enter student Id:");
+        String studentId = scanner.nextLine();
+        System.out.println("Enter grade: ");
+        String grade= scanner.nextLine();
+        System.out.println("Enter  jersey:");
+        String jersey = scanner.nextLine();
+        System.out.println("Enter  position: ");
+        String position = scanner.nextLine();
+        System.out.println("Enter cheer: ");
+        String cheer = scanner.nextLine();
+        System.out.println("Enter  subject: ");
+        String subject = scanner.nextLine();
+        System.out.println(" Is Jersey Color true/false: ");
+        boolean IsJerseyColor = Boolean.parseBoolean(scanner.nextLine());
+        System.out.println(" is Pitch Catch true/false: ");
+        boolean PitchCatch = Boolean.parseBoolean(scanner.nextLine());
+
+        Student student = new Student( id,grade,jersey,position, cheer,subject, IsJerseyColor, PitchCatch);
     }
 
-    private static void readStudents(Scanner scanner) {
-        List<Student> students = StudentList.readStudents();
-        // TO DO: print out each student
+    private static void readStudents() {
+        if (studentList.isEmpty()) {
+            System.out.println("There are no students in the database.");
+        }else{
+          for (Student student : studentList) {
+              System.out.println(student);
+          }
+        }
+
     }
 
     private static void updateStudent(Scanner scanner) {
-        // TO DO: ask for new information to update student
 
-        Student student = new Student(id, name, course);
+        Student student = new Student(id, grade, jesery, position,cheer,subject, IsJerseyColor,PitchCatch);
         StudentList.updateStudent(student);
         System.out.println("Student updated successfully!");
     }
