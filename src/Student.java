@@ -4,9 +4,9 @@ public class Student {
     private int jersey ;
     private String position;
     private String cheer;
-    Private String subject;
-    Private boolean IsJerseyColor;
-    Private boolean pitchCatch;
+    private String subject;
+    private boolean IsJerseyColor;
+    private boolean pitchCatch;
 
 
     public Student(String id, String grade, int jersey, String position, String cheer, String subject, boolean jerseyColor, boolean pitchCatch) {
@@ -16,7 +16,7 @@ public class Student {
         this.position = position;
         this.cheer = cheer;
         this.subject = subject;
-        this.jerseyColor= jerseyColor;
+        this.IsJerseyColor= jerseyColor;
         this.pitchCatch = pitchCatch;
     }
 
@@ -55,9 +55,9 @@ public class Student {
     public void setSubject(String subject) { this.subject= subject}
 
     public boolean isJerseyColor() {
-        return isJerseyColor;
+        return IsJerseyColor;
     }
-    public void setJerseyColor(boolean jerseyColor) { this.isJerseyColor= IsJerseyColor}
+    public void setJerseyColor(boolean jerseyColor) { this.IsJerseyColor= IsJerseyColor}
 
     public boolean isPitchCatch() {
         return pitchCatch;
@@ -75,7 +75,7 @@ public class Student {
                 ", position='" + position + '\'' +
                 ", cheer='" + cheer + '\'' +
                 ", subject='" + subject + '\'' +
-                ", jerseyColor=" + jerseyColor +
+                ", jerseyColor=" + IsJerseyColor +
                 ", pitchCatch=" + pitchCatch +
                 '}';
     }
