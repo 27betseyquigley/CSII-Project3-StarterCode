@@ -52,12 +52,12 @@ public class Student {
     public String getSubject() {
         return subject;
     }
-    public void setSubject(String subject) { this.subject= subject}
+    public void setSubject(String subject) { this.subject= subject;}
 
     public boolean isJerseyColor() {
         return IsJerseyColor;
     }
-    public void setJerseyColor(boolean jerseyColor) { this.IsJerseyColor= IsJerseyColor}
+    public void setJerseyColor(boolean jerseyColor) { this.IsJerseyColor= IsJerseyColor;}
 
     public boolean isPitchCatch() {
         return pitchCatch;
