@@ -69,7 +69,7 @@ public class Main {
         System.out.println("Student created successfully!");
     }
 
-    private static void readStudents() {
+    private static void readStudents(Scanner scanner) {
         if (studentList.isEmpty()) {
             System.out.println("There are no students in the database.");
         }else{
