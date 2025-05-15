@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static  List<Student> studentList= new ArrayList<Student>();
@@ -46,10 +47,6 @@ public class Main {
     private static void createStudent(Scanner scanner) {
         System.out.print("Enter student ID: ");
         String id = scanner.nextLine();
-        // TO DO: fill out the rest of this
-
-        // TO DO: create a student object with this information
-        StudentList.createStudent(student);
         System.out.println("Enter student Id:");
         String studentId = scanner.nextLine();
         System.out.println("Enter grade: ");
@@ -68,6 +65,8 @@ public class Main {
         boolean PitchCatch = Boolean.parseBoolean(scanner.nextLine());
 
         Student student = new Student( id,grade,jersey,position, cheer,subject, IsJerseyColor, PitchCatch);
+        studentList.add(student);
+        System.out.println("Student created successfully!");
     }
 
     private static void readStudents() {
@@ -82,17 +81,49 @@ public class Main {
     }
 
     private static void updateStudent(Scanner scanner) {
+       System.out.print("Enter student ID: ");
+       String id = scanner.nextLine();
+       Student foundStudent= null;
 
-        Student student = new Student(id, grade, jesery, position,cheer,subject, IsJerseyColor,PitchCatch);
-        StudentList.updateStudent(student);
-        System.out.println("Student updated successfully!");
+       for (Student student : studentList) {
+           if (student.getId().equals(id)) {
+               foundStudent = student;
+               break;
+           }
+
+       }
+       if (foundStudent != null) {
+           System.out.println("Enter student grade: ");
+           foundStudent.setGrade(scanner.nextLine());
+           System.out.println("Enter student jersey: ");
+           foundStudent.setJersey(scanner.nextLine());
+           System.out.println("Enter student position: ");
+           foundStudent.setPosition(scanner.nextLine());
+           System.out.println("Enter student cheer: ");
+           foundStudent.setCheer(scanner.nextLine());
+           System.out.println("Enter student subject: ");
+           foundStudent.setSubject(scanner.nextLine());
+           System.out.println(" Is Jersey Color true/false: ");
+           foundStudent.setJerseyColor(Boolean.parseBoolean(scanner.nextLine()));
+           System.out.println(" Is Pitch Catch true/false: ");
+           foundStudent.setPitchCatch(Boolean.parseBoolean(scanner.nextLine()));
+
+           System.out.println("Student updated successfully! ");
+       }else{
+           System.out.println("Student not found.");
+       }
     }
 
     private static void deleteStudent(Scanner scanner) {
-        // TO DO: ask for student ID and store in a variable
+     System.out.print("Enter student ID to delete: ");
+      String id = scanner.nextLine();
+      boolean removed = studentList.removeIf(student -> student.getId().equals(id));
 
-        Student student = new Student(id, "", "");
-        StudentList.deleteStudent(student);
-        System.out.println("Student deleted successfully!");
+      if (removed) {
+          System.out.println("Student deleted successfully!");
+
+      }else{
+          System.out.println("Student not found.");
+      }
     }
 }
